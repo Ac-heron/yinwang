@@ -1,51 +1,85 @@
-yinwang
-=======
 
-www.fzb.me Blog Theme For Hexo
+## hexo theme
+ https://ac-heron.github.io
 
-#### You Can Find Me in : https://hexo.io/themes/
+### 我的修改：
 
-### 缘由
-每篇博客就是一篇赏心悦目的文章，即使不读也很美的存在在那里。我觉得这样的版式设计很好，就在王垠博客的主题基础上，增加了一些优化，得到了这个Hexo主题。
+- 1. 点击文章标题在当前页面打开
+article.ejs 
+去除<a target="blac
 
-![home page](http://wx1.sinaimg.cn/large/4b1ff580ly1g1oimpczcsj21n20u0tez.jpg)
+- 2. 去除文章页自动生成的目录
+article.ejs
+<!-- <%- toc(post.content, {"list_number":false}) %> -->
 
-![content page](http://wx2.sinaimg.cn/large/4b1ff580ly1g1oip0mgkqj21rs0u0k30.jpg)
-
-### NEW
-
-新增 Tomorrow Theme 作为代码高亮，共有5款主题供你选择。默认使用 白色的 `normal` 主题，可选的值有 `normal`，`night`， `night blue`， `night bright`， `night eighties`：
-
-![image](https://github.com/mickeyouyou/yinwang/raw/master/source/images/tomorrow-normal.png)
-![image](https://github.com/mickeyouyou/yinwang/raw/master/source/images/tomorrow-night.png)
-![image](https://github.com/mickeyouyou/yinwang/raw/master/source/images/tomorrow-night-blue.png)
-![image](https://github.com/mickeyouyou/yinwang/raw/master/source/images/tomorrow-night-eighties.png)
-![image](https://github.com/mickeyouyou/yinwang/raw/master/source/images/tomorrow-night-bright.png)
-
-### Install
-
-```sh
-$ git clone https://github.com/mickeyouyou/yinwang.git themes/yinwang
+- 3. 样式调整,只对电脑端有效，手机端宽度正常显示
+css/common.style:
+```
+ //margin: 5% 20% 5% 20%;//desktop version
+  //width: 50%; // desktop version
+  //>=768的设备
+  @media (min-width: 768px){ 
+    margin: 5% 20% 5% 20%;//desktop version
+    width: 50%; // desktop version 
+  }
 ```
 
+- 4. 文章标题不用下划线：
+css/common.style:
+border-bottom: 0px 
+```
+a {
+  text-decoration: none;
+  cursor: crosshair;
+  border-bottom: 0px dashed Red;
+  padding: 1px;
+  color: black;
+}
+```
 
-### Enable
+- 5. 居右显示发布时间,并设置1989年的不显示，比如菜单栏read等页面
+article.ejs:
+```
+<div class="article-category" style="text-align:right;">
+<% if (date(post.date, 'YYYY') != '1989') { %>
+<%- date(post.date, 'YYYY年M月D日') %>
+<% } %>
+```
 
-Modify `theme` setting in `_config.yml` to `yinwang`.
+- 6. 给表格中的链接加颜色
+common.style
+```
+table td a, table th a {
+  color: #428bca;
+  text-decoration: none;
+}
+```
 
-##### You need Update `themes/yinwang/_config.yml`
-- menu
-- favicon.ico on `themes/yinwang/sourse/favicon`
-- disqus id
-- and so on...
-- highlight theme
-
-
-
-### Update
-
+- 7. 引用的字体颜色修改
 
 ```
-cd themes/yinwang
-git pull
+blockquote {
+  color:#715959;
+```
+
+- 8.a链接添加颜色
+common.styl:
+
+```
+a {
+  text-decoration: none;
+  cursor: crosshair;
+  border-bottom: 0px dashed Red;
+  padding: 1px;
+  color: #428bca;
+}
+```
+
+- 9. 图片缩小显示
+common.styl
+```
+img {
+  width: 50%;
+}
+
 ```

@@ -5,7 +5,7 @@ version: 3.0
 favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: fzb.me,冯宗宝,冯宗宝的blog 
+keywords: Acheron,blog,博客,代码,技术,书法,读书
 
 # Code Highlight theme
 # Available value: normal | night | night eighties | night blue | night bright
@@ -14,15 +14,13 @@ highlight_theme: normal
 
 
 menu:
-  Blog: /
-  #categories: /categories
-  #archives: /archives
-  #tags: /tags
-  Apollo: /apollo
-  Beanstalkd: /beanstalkd
-  About: /about
-  #致莫急: /a-letter-to-mr-moji
-  GitHub: https:github.com/mickeyouyou
+  首页: /
+  读书: /myblogs/read
+  书法: /myblogs/shufa
+  代码: /myblogs/code
+  生活: /myblogs/life
+  我是: /myblogs/about
+
 
 
 
