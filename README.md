@@ -88,3 +88,31 @@ img {
 nav.ejs:
 <nav class="navbar navbar-inverse
 
+
+11. 导航栏横着展示
+原先: <ul class="nav navbar-nav navbar-right">
+```
+<!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+            <%if(theme.menu){%>
+                <%for(key in theme.menu){%>
+                    <li <%if(key == 'Blog'){%> class="active" <%}%>>
+                        <a href="<%- url_for(theme.menu[key])%>"> <%= key%></a>
+                    </li>
+                <%}%>
+            <%}%>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+```
+改为：
+ <ul class="nav nav-tabs navbar-right">
+
+12.js改为本地引入
+afterfooter.ejs
+<%- js('js/bootstrap.min.js')%>
+
+
+13.更换favicon.ico
+https://www.logosc.cn/logo/favicon?s=A
+https://www.gaituba.com/favicon
