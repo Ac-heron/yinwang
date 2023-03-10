@@ -4,15 +4,15 @@
 
 ### 我的修改：
 
-- 1. 点击文章标题在当前页面打开
+1. 点击文章标题在当前页面打开
 article.ejs 
 去除<a target="blac
 
-- 2. 去除文章页自动生成的目录
+2. 去除文章页自动生成的目录
 article.ejs
 <!-- <%- toc(post.content, {"list_number":false}) %> -->
 
-- 3. 样式调整,只对电脑端有效，手机端宽度正常显示
+3. 样式调整,只对电脑端有效，手机端宽度正常显示
 css/common.style:
 ```
  //margin: 5% 20% 5% 20%;//desktop version
@@ -24,7 +24,7 @@ css/common.style:
   }
 ```
 
-- 4. 文章标题不用下划线：
+4. 文章标题不用下划线：
 css/common.style:
 border-bottom: 0px 
 ```
@@ -37,7 +37,7 @@ a {
 }
 ```
 
-- 5. 居右显示发布时间,并设置1989年的不显示，比如菜单栏read等页面
+5. 居右显示发布时间,并设置1989年的不显示，比如菜单栏read等页面
 article.ejs:
 ```
 <div class="article-category" style="text-align:right;">
@@ -46,7 +46,7 @@ article.ejs:
 <% } %>
 ```
 
-- 6. 给表格中的链接加颜色
+6. 给表格中的链接加颜色
 common.style
 ```
 table td a, table th a {
@@ -55,14 +55,14 @@ table td a, table th a {
 }
 ```
 
-- 7. 引用的字体颜色修改
+7. 引用的字体颜色修改
 
 ```
 blockquote {
   color:#715959;
 ```
 
-- 8.a链接添加颜色
+8.a链接添加颜色
 common.styl:
 
 ```
@@ -75,7 +75,7 @@ a {
 }
 ```
 
-- 9. 图片缩小显示
+9. 图片缩小显示
 common.styl
 ```
 img {
@@ -83,3 +83,8 @@ img {
 }
 
 ```
+
+10. 导航栏黑色
+nav.ejs:
+<nav class="navbar navbar-inverse
+
