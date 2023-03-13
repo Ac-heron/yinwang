@@ -116,3 +116,20 @@ afterfooter.ejs
 13.更换favicon.ico
 https://www.logosc.cn/logo/favicon?s=A
 https://www.gaituba.com/favicon
+
+14.文章页也有导航栏
+在post.ejs加上nav和js
+```
+<%- partial('_partial/nav')%>
+<br/>
+<%- partial('_partial/article', {post: page, index: false}) %>
+
+<%- partial('_partial/afterfooter')%>
+```
+在head.ejs加入css
+```
+ <%} else {%>
+
+        <%- css('css/bootstrap.min.css')%>
+        <%- css('css/bootstrap-theme.min.css')%>
+```
